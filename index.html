@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GlassMorphismContactForm</title>
+</head>
+<style>
+	body{
+		background:url('background.jpg');
+		background-repeat:no-repeat;
+		background-size:cover;
+		font-family:Arial;
+
+	}
+    .container{
+      max-width:600px;
+      margin:25px;
+      background:transparent;
+      backdrop-filter:blur(25px);
+      opacity:0.8;
+      border-radius: 25px;
+      border:2px white solid;
+      padding: 30px 40px;
+      text-align:center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    }
+    .container h2 {
+      font-size: 2.6rem;
+      color: #257a2b;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+    .container p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      color:white;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    input, textarea {
+      padding: 15px 18px;
+      font-size: 1.2rem;
+      border-radius:35px;
+      border: 2px solid #aaa;
+      resize: vertical;
+      background:transparent;
+      transition: border-color 0.3s ease;
+      font-family: inherit; 
+    }
+    input:focus, textarea:focus {
+      border-color: #257a2b;
+      outline: none;
+      background:white;
+
+    }
+    button.submit-btn {
+      background: #257a2b;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 15px 0;
+      border-radius:35px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button.submit-btn:hover,
+    button.submit-btn:focus {
+      background: #1b4e19;
+      outline: none;
+      transform: scale(1.05);
+    }
+    /* Responsive for form to ensure proper viewing on mobile phones and smaller devices*/
+    @media (max-width: 480px) {
+      form {
+        gap: 14px;
+      }
+      input, textarea {
+        font-size: 1rem;
+      }
+      button.submit-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+    }
+
+    .spinner{
+      border-radius:100%;
+      padding:25px;
+      border-bottom:5px transparent solid;
+      border-left:5px transparent solid;
+      border-right:5px red solid;
+      border-top:5px transparent solid ;
+      background:transparent;
+      animation:spinner 2s linear infinite;
+      transition:transform 2s;
+
+
+    }
+    @keyframes spinner{
+      0%{transform:rotate(0deg);}
+      100%{transform:rotate(360deg);}
+
+
+    }
+
+</style>
+<body>
+<center>
+    <!-- Contact Form -->
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Got questions or want to place a special order? Reach out to us anytime, and we'll respond as soon as possible!</p>
+     <form>
+        <input type="text" placeholder="Your Name" aria-label="Your Name" required />
+        <input type="email"  placeholder="Your Email" aria-label="Your Email" required />
+        <textarea  rows="5" placeholder="Your Message" aria-label="Your Message" required></textarea>
+        <button class="submit-btn" type="submit">Send Message</button>
+     </form>
+      <p><button class="spinner"></button></p>
+    </div>
+</center>
+</body>
+</html>
